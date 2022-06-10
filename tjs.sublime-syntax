@@ -1,0 +1,19 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+name: Template JavaScript
+file_extensions:
+  - tjs
+scope: source.js
+
+contexts:
+
+  main:
+    - match: ""
+      push: Packages/JavaScript/JavaScript.sublime-syntax
+      with_prototype:
+      - match: 'template `'
+        push: Packages/HTML/HTML.sublime-syntax
+        with_prototype:
+          - match: '`'
+            pop: true
